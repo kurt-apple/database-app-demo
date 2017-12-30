@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareiiredux.FXMLNewCustomerController">
+   <children>
+      <HBox>
+         <children>
+            <Label minWidth="80.0" text="Name">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="name" prefWidth="550.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+            <Label minWidth="80.0" text="Address Line 1">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="address1" prefWidth="550.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+            <Label minWidth="80.0" text="Address Line 2">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="address2" prefWidth="550.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+            <Label minWidth="80.0" text="City">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="city" minWidth="120.0" prefWidth="120.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Label minWidth="80.0" text="Country">
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="country" minWidth="120.0" prefWidth="120.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+            <Label minWidth="50.0" prefWidth="50.0" text="Postal">
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="postal" prefWidth="80.0">
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin></TextField>
+         </children>
+      </HBox>
+      <HBox>
+         <children>
+            <Label minWidth="80.0" text="Phone #">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="phone" prefWidth="120.0">
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox nodeOrientation="RIGHT_TO_LEFT">
+         <children>
+            <Button fx:id="cancelButton" minWidth="60.0" mnemonicParsing="false" onMouseClicked="#handleCancel" text="Cancel">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="saveButton" minWidth="60.0" mnemonicParsing="false" onMouseClicked="#saveCustomer" text="Save">
+               <HBox.margin>
+                  <Insets bottom="10.0" right="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</VBox>

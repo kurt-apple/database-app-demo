@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="800.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="softwareiiredux.FXMLMainViewController">
+    <children>
+        <HBox prefWidth="200.0">
+            <children>
+            <Label minWidth="230.0" text="Display Appointments for Which User:">
+               <HBox.margin>
+                  <Insets top="5.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets bottom="4.0" left="5.0" right="5.0" top="4.0" />
+               </padding>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="userfilterchoicebox" minWidth="90.0" prefWidth="90.0">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </ChoiceBox>
+            <Button fx:id="monthSum" minWidth="120.0" mnemonicParsing="false" onMouseClicked="#handleMonthSum" text="Month Summary">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+                <Button fx:id="newAppointment" minWidth="120.0" mnemonicParsing="false" onMouseClicked="#handleNewAppointment" text="New Appointment">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                </Button>
+                <Button fx:id="customerInfoViewButton" minWidth="90.0" mnemonicParsing="false" onMouseClicked="#handleCustomerInfo" text="Customers">
+                    <HBox.margin>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                    </HBox.margin>
+                </Button>
+            <Button fx:id="tips" minWidth="40.0" mnemonicParsing="false" onMouseClicked="#getTips" text="Tips">
+               <HBox.margin>
+                  <Insets left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="exitButton" minWidth="60.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onMouseClicked="#handleExit" text="Exit">
+               <HBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </HBox.margin>
+            </Button>
+            </children>
+        </HBox>
+        <TabPane prefHeight="400.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE" VBox.vgrow="ALWAYS">
+            <tabs>
+                <Tab fx:id="monthlyTab" text="Monthly">
+                    <content>
+                        <VBox>
+                     <HBox>
+                        <children>
+                           <Button fx:id="back1" minHeight="25.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#handleBack1Month" text="&lt;&lt;">
+                              <HBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </HBox.margin>
+                           </Button>
+                           <Label fx:id="monthLabel" alignment="CENTER" contentDisplay="CENTER" minHeight="25.0" prefWidth="2000.0" text="Month Name" textAlignment="CENTER" textFill="#0d17a4" HBox.hgrow="ALWAYS">
+                              <font>
+                                 <Font name="System Bold" size="14.0" />
+                              </font>
+                              <HBox.margin>
+                                 <Insets top="5.0" />
+                              </HBox.margin>
+                           </Label>
+                           <Button fx:id="next1" minHeight="25.0" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#handleNext1Month" text="&gt;&gt;">
+                              <HBox.margin>
+                                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                              </HBox.margin>
+                           </Button>
+                        </children>
+                     </HBox>
+                            <HBox alignment="CENTER" prefWidth="600.0">
+                                <children>
+                                    <Label prefWidth="300.0" text="Sunday" GridPane.halignment="CENTER" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Label prefWidth="300.0" text="Monday" GridPane.columnIndex="1" GridPane.halignment="CENTER" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Label prefWidth="300.0" text="Tuesday" GridPane.columnIndex="2" GridPane.halignment="CENTER" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Label prefWidth="300.0" text="Wednesday" GridPane.columnIndex="3" GridPane.halignment="CENTER" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Label prefWidth="300.0" text="Thursday" GridPane.columnIndex="4" GridPane.halignment="CENTER" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Label prefWidth="300.0" text="Friday" GridPane.columnIndex="5" GridPane.halignment="CENTER" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                    <Label prefWidth="300.0" text="Saturday" GridPane.columnIndex="6" GridPane.halignment="CENTER" HBox.hgrow="ALWAYS">
+                                        <font>
+                                            <Font name="System Bold" size="14.0" />
+                                        </font>
+                                    </Label>
+                                </children>
+                        <opaqueInsets>
+                           <Insets />
+                        </opaqueInsets>
+                            </HBox>
+                            <GridPane gridLinesVisible="true" VBox.vgrow="ALWAYS">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                <children>
+                                    <VBox prefHeight="200.0" prefWidth="100.0">
+                                        <children>
+                                            <Label fx:id="sun0" alignment="CENTER" minWidth="40.0" text="Label" textAlignment="CENTER">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="su0" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+                                        <children>
+                                            <Label fx:id="mon0" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="mo0" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2">
+                                        <children>
+                                            <Label fx:id="tue0" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="tu0" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3">
+                                        <children>
+                                            <Label fx:id="wed0" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="we0" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4">
+                                        <children>
+                                            <Label fx:id="thu0" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="th0" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5">
+                                        <children>
+                                            <Label fx:id="fri0" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="fr0" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6">
+                                        <children>
+                                            <Label fx:id="sat0" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="sa0" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                        <children>
+                                            <Label fx:id="sun1" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="su1" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                        <children>
+                                            <Label fx:id="mon1" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="mo1" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                        <children>
+                                            <Label fx:id="tue1" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="tu1" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                                        <children>
+                                            <Label fx:id="wed1" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="we1" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                                        <children>
+                                            <Label fx:id="thu1" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="th1" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                                        <children>
+                                            <Label fx:id="fri1" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="fr1" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                                        <children>
+                                            <Label fx:id="sat1" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="sa1" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                                        <children>
+                                            <Label fx:id="sun2" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="su2" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                        <children>
+                                            <Label fx:id="mon2" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="mo2" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                        <children>
+                                            <Label fx:id="tue2" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="tu2" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                                        <children>
+                                            <Label fx:id="wed2" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="we2" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                                        <children>
+                                            <Label fx:id="thu2" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="th2" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                                        <children>
+                                            <Label fx:id="fri2" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="fr2" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                                        <children>
+                                            <Label fx:id="sat2" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="sa2" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="3">
+                                        <children>
+                                            <Label fx:id="sun3" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="su3" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                        <children>
+                                            <Label fx:id="mon3" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="mo3" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                        <children>
+                                            <Label fx:id="tue3" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="tu3" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                                        <children>
+                                            <Label fx:id="wed3" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="we3" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                                        <children>
+                                            <Label fx:id="thu3" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="th3" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                                        <children>
+                                            <Label fx:id="fri3" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="fr3" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                                        <children>
+                                            <Label fx:id="sat3" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="sa3" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="4">
+                                        <children>
+                                            <Label fx:id="sun4" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="su4" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                        <children>
+                                            <Label fx:id="mon4" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="mo4" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                                        <children>
+                                            <Label fx:id="tue4" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="tu4" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                                        <children>
+                                            <Label fx:id="wed4" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="we4" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                                        <children>
+                                            <Label fx:id="thu4" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="th4" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                                        <children>
+                                            <Label fx:id="fri4" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="fr4" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                                    <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                                        <children>
+                                            <Label fx:id="sat4" alignment="CENTER" minWidth="40.0" text="Label">
+                                                <font>
+                                                    <Font name="System Bold" size="12.0" />
+                                                </font>
+                                            </Label>
+                                            <ListView fx:id="sa4" prefHeight="200.0" prefWidth="200.0" />
+                                        </children>
+                                    </VBox>
+                           <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="5">
+                              <children>
+                                 <Label fx:id="sun5" alignment="CENTER" minWidth="40.0" text="Label">
+                                    <font>
+                                       <Font name="System Bold" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <ListView fx:id="su5" prefHeight="200.0" prefWidth="200.0" />
+                              </children>
+                           </VBox>
+                           <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                              <children>
+                                 <Label fx:id="mon5" alignment="CENTER" minWidth="40.0" text="Label">
+                                    <font>
+                                       <Font name="System Bold" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <ListView fx:id="mo5" prefHeight="200.0" prefWidth="200.0" />
+                              </children>
+                           </VBox>
+                           <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                              <children>
+                                 <Label fx:id="tue5" alignment="CENTER" minWidth="40.0" text="Label">
+                                    <font>
+                                       <Font name="System Bold" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <ListView fx:id="tu5" prefHeight="200.0" prefWidth="200.0" />
+                              </children>
+                           </VBox>
+                           <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                              <children>
+                                 <Label fx:id="wed5" alignment="CENTER" minWidth="40.0" text="Label">
+                                    <font>
+                                       <Font name="System Bold" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <ListView fx:id="we5" prefHeight="200.0" prefWidth="200.0" />
+                              </children>
+                           </VBox>
+                           <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                              <children>
+                                 <Label fx:id="thu5" alignment="CENTER" minWidth="40.0" text="Label">
+                                    <font>
+                                       <Font name="System Bold" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <ListView fx:id="th5" prefHeight="200.0" prefWidth="200.0" />
+                              </children>
+                           </VBox>
+                           <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                              <children>
+                                 <Label fx:id="fri5" alignment="CENTER" minWidth="40.0" text="Label">
+                                    <font>
+                                       <Font name="System Bold" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <ListView fx:id="fr5" prefHeight="200.0" prefWidth="200.0" />
+                              </children>
+                           </VBox>
+                           <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                              <children>
+                                 <Label fx:id="sat5" alignment="CENTER" minWidth="40.0" text="Label">
+                                    <font>
+                                       <Font name="System Bold" size="12.0" />
+                                    </font>
+                                 </Label>
+                                 <ListView fx:id="sa5" prefHeight="200.0" prefWidth="200.0" />
+                              </children>
+                           </VBox>
+                                </children>
+                            </GridPane>
+                        </VBox>
+                        
+                    </content>
+                </Tab>
+                <Tab fx:id="weeklyTab" text="Weekly">
+               <content>
+                  <VBox prefWidth="800.0">
+                     <children>
+                        <HBox prefWidth="200.0">
+                           <children>
+                              <Button fx:id="back1w" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#handleBack1Week" prefWidth="35.0" text="&lt;&lt;">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Label fx:id="weekLabel" alignment="CENTER" minHeight="25.0" prefWidth="2000.0" text="Week of Date to Date" textAlignment="CENTER" textFill="#152bd0" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets top="5.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="next1w" minWidth="35.0" mnemonicParsing="false" onMouseClicked="#handleNext1Week" prefWidth="35.0" text="&gt;&gt;">
+                                 <HBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
+                           <children>
+                              <VBox prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="sunweekLabel" prefWidth="300.0" text="Sunday">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="SundayLV" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="monweekLabel" prefWidth="300.0" text="Monday">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="MondayLV" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="tueweekLabel" text="Tuesday">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="TuesdayLV" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="wedweekLabel" prefWidth="300.0" text="Wednesday">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="WednesdayLV" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="thuweekLabel" prefWidth="300.0" text="Thursday">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="ThursdayLV" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="friweekLabel" text="Friday">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="FridayLV" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                 </children>
+                              </VBox>
+                              <VBox prefWidth="200.0" HBox.hgrow="ALWAYS">
+                                 <children>
+                                    <Label fx:id="satweekLabel" prefWidth="300.0" text="Saturday">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Label>
+                                    <ListView fx:id="SaturdayLV" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </content></Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</VBox>
