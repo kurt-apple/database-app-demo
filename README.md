@@ -1,5 +1,6 @@
 # database-app-demo
-Database-connected inventory management app (as NetBeans Project) I made as part of WGU: C195: Advanced Java Concepts
+Database-connected appointment/client management app (as NetBeans Project) I made as part of WGU: C195: Advanced Java Concepts
+- Custom calendar view from scratch
 - JavaFX/JavaSE 8
 - MySQL using JDBC (sorry, database IP scrubbed)
 - Overuses lambda (course sortof required it to demonstrate lambda mechanical fluency)
